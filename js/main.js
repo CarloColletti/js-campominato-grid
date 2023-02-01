@@ -72,7 +72,7 @@ startbuttonElement.addEventListener(
 function createGrid(gridElement, dimension) {
 
     // mi assicuro che la griglia sia vuota
-    gridElement.innerHtml = " ";
+    gridElement.innerHTML = " ";
 
     // per 100 volte (numero quadrati all'interno della griglia)
     for (let i = 0; i < dimension; i++) {
