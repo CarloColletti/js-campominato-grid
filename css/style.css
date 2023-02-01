@@ -1,0 +1,32 @@
+body {
+    background-color: #7fffd4;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#grid {
+    width: 900px;
+    height: 900px;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#grid,
+.square {
+    border: 2px solid black;
+}
+
+.square {
+    width: calc(100% /10);
+    height: calc(100%/10);
+    cursor: crosshair;
+}
+
+.square.active {
+    background-color: azure;
+
+}
