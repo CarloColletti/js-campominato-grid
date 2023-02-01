@@ -23,3 +23,46 @@ Aggiungo uno screen senza e con bonus, ma potete realizzare la parte grafica a v
 */
 
 
+
+/****************************************************************
+ *                                                              *
+ *                      Code on load                            *
+ *                                                              *
+ ****************************************************************
+*/
+
+const gridElement = document.getElementById('grid');
+
+// richiamo la funzione per dubug
+createGrid(gridElement)
+
+
+
+/****************************************************************
+ *                                                              *
+ *                      Function                                *
+ *                                                              *
+ ****************************************************************
+*/
+
+
+/**
+ *
+ * @param {*} gridElement elemento del documento in cui inserire div>square
+ *  
+*/
+
+// funzione genero una grilia
+function createGrid(gridElement) {
+
+    // per 100 volte (numero quadrati all'interno della griglia)
+    for (let i = 0; i < 100; i++) {
+        // creo un div per far contenere le classi ecc 
+        const squareElement = document.createElement('div');
+
+        // aggiungo la classe square per bordi ecc 
+        squareElement.classList.add('square');
+        // li metto a schermo
+        gridElement.append(squareElement);
+    }
+}
