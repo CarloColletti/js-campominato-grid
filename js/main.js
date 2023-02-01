@@ -31,10 +31,26 @@ Aggiungo uno screen senza e con bonus, ma potete realizzare la parte grafica a v
  ****************************************************************
 */
 
-const gridElement = document.getElementById('grid');
+
+// collego il bottone per la funzione
+const startbuttonElement = document.getElementById('start-game')
 
 // richiamo la funzione per dubug
-createGrid(gridElement)
+// createGrid(gridElement)
+
+// aggiungo un evento al click  
+startbuttonElement.addEventListener(
+    'click',
+    function () {
+        // prendo la griglia 
+        const gridElement = document.getElementById('grid');
+        // do una dimensione 
+        const dimension = 100;
+        // richiamo la funzione
+        createGrid(gridElement, dimension);
+    }
+
+)
 
 
 
@@ -53,16 +69,35 @@ createGrid(gridElement)
 */
 
 // funzione genero una grilia
-function createGrid(gridElement) {
+function createGrid(gridElement, dimension) {
+
+    // mi assicuro che la griglia sia vuota
+    gridElement.innerHtml = " ";
 
     // per 100 volte (numero quadrati all'interno della griglia)
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < dimension; i++) {
         // creo un div per far contenere le classi ecc 
         const squareElement = document.createElement('div');
 
         // aggiungo la classe square per bordi ecc 
         squareElement.classList.add('square');
+
+        // genero varibile che contiene il numero della i 
+        const number = i + 1;
+
+        // aggiungo la funzione per colorare la casella
+        squareElement.addEventListener(
+            'click',
+            function () {
+                this.classList.toggle('active');
+                console.log(number);
+            }
+        )
         // li metto a schermo
         gridElement.append(squareElement);
+
+        // aggiungo il numero a square 
+        squareElement.append(number);
+
     }
 }
